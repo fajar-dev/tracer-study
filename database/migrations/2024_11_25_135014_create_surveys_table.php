@@ -13,7 +13,24 @@ return new class extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('slug')->unique();
+            $table->string('title');
+            $table->string('thumbnail_path')->nullable();
+            $table->text('description');
+            $table->json('question');
+            $table->boolean('is_active');
+            $table->boolean('is_private');
             $table->timestamps();
+
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('set null')
+            ->onUpdate('cascade');
+            
+            $table->index('slug');
+            $table->index('title');
         });
     }
 

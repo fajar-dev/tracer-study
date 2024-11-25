@@ -13,7 +13,28 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('news_category_id')->nullable();
+            $table->string('slug')->unique();
+            $table->string('title');
+            $table->string('thumbnail_path');
+            $table->text('content');
             $table->timestamps();
+
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('set null')
+            ->onUpdate('cascade');
+
+            $table->foreign('news_category_id')
+            ->references('id')
+            ->on('news_categories')
+            ->onDelete('set null')
+            ->onUpdate('cascade');
+
+            $table->index('slug');
+            $table->index('title');
         });
     }
 

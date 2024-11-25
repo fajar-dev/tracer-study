@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SurveyRespone extends Model
+class Message extends Model
 {
     //
 }
