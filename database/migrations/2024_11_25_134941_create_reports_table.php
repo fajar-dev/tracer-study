@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('file_path')->nullable();
             $table->text('content');
-            $table->string('title');
             $table->timestamps();
 
             $table->foreign('user_id')
