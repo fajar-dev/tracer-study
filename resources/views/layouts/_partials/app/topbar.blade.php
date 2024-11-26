@@ -109,7 +109,7 @@
           <div class="menu-item px-3">
             <div class="menu-content d-flex align-items-center px-3">
               <div class="symbol symbol-50px me-5">
-                <img alt="Logo" src="assets/media/avatars/300-2.jpg" />
+                <img alt="Logo" src="{{ Auth::user()->photo_path ? Storage::url(Auth::user()->photo_path) : 'https://ui-avatars.com/api/?background=DFFFEA&color=04B440&bold=true&name='.Auth::user()->name }}" />
               </div>
               <div class="d-flex flex-column">
                 <div class="fw-bold d-flex align-items-center fs-5">{{ Auth::user()->name }}</div>
@@ -119,14 +119,10 @@
           </div>
           <div class="separator my-2"></div>
           <div class="menu-item px-5">
-            <a href="account/overview.html" class="menu-link px-5">My Profile</a>
-          </div>
-          <div class="separator my-2"></div>
-          <div class="menu-item px-5 my-1">
-            <a href="account/settings.html" class="menu-link px-5">Account Settings</a>
+            <a href="{{ route('admin.profile') }}" class="menu-link px-5">My Profile</a>
           </div>
           <div class="menu-item px-5">
-            <a href="authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
+            <a href="{{ route('logout') }}" class="menu-link px-5">Sign Out</a>
           </div>
         </div>
       </div>

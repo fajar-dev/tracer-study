@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\MessageController;
-use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('home');
 
@@ -55,4 +56,11 @@ Route::prefix('/user')->group(function () {
     Route::post('/add', [UserController::class, 'userStore'])->name('admin.user.store');
     Route::post('/{id}/edit', [UserController::class, 'userUpdate'])->name('admin.user.update');
     Route::get('/{id}/destroy', [UserController::class, 'userDestroy'])->name('admin.user.destroy');
+});
+
+Route::prefix('/profile')->group(function () {
+    Route::get('/', [ProfileController::class, 'index'])->name('admin.profile');
+    Route::post('/', [ProfileController::class, 'profileUpdate'])->name('admin.profile.update');
+    Route::post('/signin-method', [ProfileController::class, 'signinUpdate'])->name('admin.profile.signin');
+    Route::post('/change-password', [ProfileController::class, 'changePassword'])->name('admin.profile.change-password');
 });

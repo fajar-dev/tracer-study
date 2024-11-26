@@ -132,14 +132,4 @@
     }
 });
 </script>
-<script>
-  document.querySelectorAll('form').forEach(function(form) {
-    form.addEventListener('submit', function(event) {
-      var submitButton = form.querySelector('button[type="submit"]');
-      submitButton.querySelector('.indicator-label').style.display = 'none';
-      submitButton.querySelector('.indicator-progress').style.display = 'inline-block';
-      submitButton.setAttribute('disabled', 'disabled');
-    });
-  });
-</script>
 @endsection
