@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MessageController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('home');
 
@@ -31,4 +32,9 @@ Route::prefix('/news')->group(function () {
         Route::post('/{id}/edit', [NewsController::class, 'categoryUpdate'])->name('admin.category.update');
         Route::get('/{id}/destroy', [NewsController::class, 'categoryDestroy'])->name('admin.category.destroy');
     });
+});
+
+Route::prefix('/message')->group(function () {
+    Route::get('/', [MessageController::class, 'message'])->name('admin.message');
+    Route::get('/{id}/destroy', [MessageController::class, 'messageDestroy'])->name('admin.message.destroy');
 });

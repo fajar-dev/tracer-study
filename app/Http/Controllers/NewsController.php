@@ -118,10 +118,10 @@ class NewsController extends Controller
             return redirect()->route('admin.category')->with('error', 'Validation Error')->withInput()->withErrors($validator);
         }
 
-        $news = New NewsCategory();
-        $news->name = $request->input('name');
-        $news->description = $request->input('description');
-        $news->save();
+        $category = New NewsCategory();
+        $category->name = $request->input('name');
+        $category->description = $request->input('description');
+        $category->save();
 
         return redirect()->route('admin.category')->with('success', 'category has been added successfully');
     }
@@ -135,17 +135,17 @@ class NewsController extends Controller
             return redirect()->route('admin.category')->with('error', 'Validation Error')->withInput()->withErrors($validator);
         }
 
-        $news = NewsCategory::findOrFail($id);
-        $news->name = $request->input('name');
-        $news->description = $request->input('description');
-        $news->save();
+        $category = NewsCategory::findOrFail($id);
+        $category->name = $request->input('name');
+        $category->description = $request->input('description');
+        $category->save();
 
         return redirect()->route('admin.category')->with('success', 'category has been updated successfully');
     }
 
     public function categoryDestroy($id){
-        $news = NewsCategory::findOrFail($id);
-        $news->delete();
+        $category = NewsCategory::findOrFail($id);
+        $category->delete();
         return redirect()->route('admin.category')->with('success', 'category has been deleted successfully');
     }
 }
