@@ -8,7 +8,7 @@
         @csrf
         <div class="mb-11">
           <h1 class="text-gray-900 fw-bolder mb-3 fs-3qx">Sign-In</h1>
-          <div class="text-gray-500 fw-semibold fs-5">Silahkan masuk untuk melanjutkan</div>
+          <div class="text-gray-500 fw-semibold fs-5">Welcome!, Please enter your credential</div>
         </div>
 
         @if (session()->has('success'))
@@ -61,7 +61,7 @@
         </div>
         <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
           <div></div>
-          <a href="{{ route('forgot') }}" class="link-primary">Lupa Password ?</a>
+          <a href="{{ route('forgot') }}" class="link-primary">Forgot Password ?</a>
         </div>
         <div class="d-grid mb-10">
           <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
@@ -70,8 +70,6 @@
             <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
           </button>
         </div>
-        <div class="text-gray-500 text-center fw-semibold fs-6">Belum Memiliki akun?  
-        <a href="{{ route('register') }}" class="link-primary">Sign-Up</a></div>
       </form>
     </div>
   </div>

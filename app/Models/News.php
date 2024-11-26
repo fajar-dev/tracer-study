@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use App\Models\NewsCategory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -23,6 +24,17 @@ class News extends Model
         'thumbnail_path',
         'content',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            if ($model->isDirty('title')) {
+                $model->slug = Str::slug($model->title);
+            }
+        });
+    }
     
     public function user(): BelongsTo
     {

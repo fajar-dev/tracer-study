@@ -59,8 +59,8 @@
   <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
     <div class="modal-content shadow rounded ">
       <div class="modal-body p-4 text-center py-8">
-        <h5 class="mb-2">Konfirmasi!!</h5>
-        <p class="mb-0">Kamu yakin ingin menghapus data ini?</p>
+        <h5 class="mb-2">Confirm!!</h5>
+        <p class="mb-0">Are you sure to delete this data?</p>
       </div>
       <div class="modal-footer flex-nowrap p-0">
         <button type="button" class="btn-delete-oke btn btn-lg btn-secondary bg-transparent text-dark fs-6 text-decoration-none col-6 m-0 rounded-0 border-end" >Hapus</button>
