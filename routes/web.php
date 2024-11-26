@@ -6,6 +6,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('home');
 
@@ -47,4 +48,11 @@ Route::prefix('/report')->group(function () {
 Route::prefix('/message')->group(function () {
     Route::get('/', [MessageController::class, 'message'])->name('admin.message');
     Route::get('/{id}/destroy', [MessageController::class, 'messageDestroy'])->name('admin.message.destroy');
+});
+
+Route::prefix('/user')->group(function () {
+    Route::get('/', [UserController::class, 'user'])->name('admin.user');
+    Route::post('/add', [UserController::class, 'userStore'])->name('admin.user.store');
+    Route::post('/{id}/edit', [UserController::class, 'userUpdate'])->name('admin.user.update');
+    Route::get('/{id}/destroy', [UserController::class, 'userDestroy'])->name('admin.user.destroy');
 });
