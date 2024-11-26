@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ReportController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('home');
 
@@ -32,6 +33,15 @@ Route::prefix('/news')->group(function () {
         Route::post('/{id}/edit', [NewsController::class, 'categoryUpdate'])->name('admin.category.update');
         Route::get('/{id}/destroy', [NewsController::class, 'categoryDestroy'])->name('admin.category.destroy');
     });
+});
+
+Route::prefix('/report')->group(function () {
+    Route::get('/', [ReportController::class, 'report'])->name('admin.report');
+    Route::get('/add', [ReportController::class, 'reportAdd'])->name('admin.report.add');
+    Route::post('/add', [ReportController::class, 'reportStore'])->name('admin.report.store');
+    Route::get('/{id}/edit', [ReportController::class, 'reportEdit'])->name('admin.report.edit');
+    Route::post('/{id}/edit', [ReportController::class, 'reportUpdate'])->name('admin.report.update');
+    Route::get('/{id}/destroy', [ReportController::class, 'reportDestroy'])->name('admin.report.destroy');
 });
 
 Route::prefix('/message')->group(function () {

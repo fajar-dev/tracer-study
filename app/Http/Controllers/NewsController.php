@@ -75,7 +75,7 @@ class NewsController extends Controller
             'content' => 'required',
         ]);
         if ($validator->fails()) {
-            return redirect()->route('admin.news.add')->with('error', 'Validation Error')->withInput()->withErrors($validator);
+            return redirect()->route('admin.news.edit', $id)->with('error', 'Validation Error')->withInput()->withErrors($validator);
         }
 
         $news = News::findOrFail($id);
@@ -83,7 +83,7 @@ class NewsController extends Controller
         $news->news_category_id = $request->input('category');
         $news->content = $request->input('content');
         if($request->has('thumbnail')){
-            $news->image =   $request->file('thumbnail')->store('news', 'public');
+            $news->thumbnail_path = $request->file('thumbnail')->store('news', 'public');
         }
         $news->save();
 
