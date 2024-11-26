@@ -25,4 +25,10 @@ Route::prefix('/news')->group(function () {
     Route::get('/{id}/edit', [NewsController::class, 'newsEdit'])->name('admin.news.edit');
     Route::post('/{id}/edit', [NewsController::class, 'newsUpdate'])->name('admin.news.update');
     Route::get('/{id}/destroy', [NewsController::class, 'newsDestroy'])->name('admin.news.destroy');
+    Route::prefix('/category')->group(function () {
+        Route::get('/', [NewsController::class, 'category'])->name('admin.category');
+        Route::post('/add', [NewsController::class, 'categoryStore'])->name('admin.category.store');
+        Route::post('/{id}/edit', [NewsController::class, 'categoryUpdate'])->name('admin.category.update');
+        Route::get('/{id}/destroy', [NewsController::class, 'categoryDestroy'])->name('admin.category.destroy');
+    });
 });

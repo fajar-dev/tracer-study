@@ -95,4 +95,57 @@ class NewsController extends Controller
         $news->delete();
         return redirect()->route('admin.news')->with('success', 'News has been deleted successfully');
     }
+
+    public function category(Request $request){
+        $search = $request->input('q');
+        $data = NewsCategory::where('name', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(10);
+        $data->appends(['q' => $search]);
+        $data = [
+            'title' => 'News',
+            'subTitle' => 'Category',
+            'page_id' => null,
+            'category' => $data
+        ];
+        return view('app.news.category',  $data);
+    }
+
+    public function categoryStore(Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->route('admin.category')->with('error', 'Validation Error')->withInput()->withErrors($validator);
+        }
+
+        $news = New NewsCategory();
+        $news->name = $request->input('name');
+        $news->description = $request->input('description');
+        $news->save();
+
+        return redirect()->route('admin.category')->with('success', 'category has been added successfully');
+    }
+
+    public function categoryUpdate($id, Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->route('admin.category')->with('error', 'Validation Error')->withInput()->withErrors($validator);
+        }
+
+        $news = NewsCategory::findOrFail($id);
+        $news->name = $request->input('name');
+        $news->description = $request->input('description');
+        $news->save();
+
+        return redirect()->route('admin.category')->with('success', 'category has been updated successfully');
+    }
+
+    public function categoryDestroy($id){
+        $news = NewsCategory::findOrFail($id);
+        $news->delete();
+        return redirect()->route('admin.category')->with('success', 'category has been deleted successfully');
+    }
 }
