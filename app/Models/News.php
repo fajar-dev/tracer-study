@@ -49,7 +49,7 @@ class News extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function NewsCategory(): BelongsTo
+    public function newsCategory(): BelongsTo
     {
         return $this->belongsTo(NewsCategory::class);
     }
