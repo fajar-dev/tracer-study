@@ -12,7 +12,7 @@
     <div id="kt_app_sidebar_navs_wrappers" class="app-sidebar-wrapper hover-scroll-y my-2" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_header" data-kt-scroll-wrappers="#kt_app_sidebar_navs" data-kt-scroll-offset="5px">
       <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary">
         <div class="menu-item mb-8">
-          <a class="menu-link btn btn-primary" href="https://preview.keenthemes.com/metronic8/demo38/layout-builder.html">
+          <a class="menu-link btn btn-primary" href="{{ route('admin.survey.add') }}">
             <span class="menu-icon">
               <i class="ki-outline ki-plus fs-2 text-white"></i>
             </span>
@@ -24,7 +24,7 @@
           <div class="app-sidebar-separator separator separator-dashed"></div>
         </div>
         <div class="menu-item">
-          <a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo38/layout-builder.html">
+          <a class="menu-link  @if($title == 'Dashboard') active @endif" href="{{ route('dashboard') }}">
             <span class="menu-icon">
               <i class="ki-outline ki-home-2 fs-2"></i>
             </span>
@@ -32,14 +32,14 @@
           </a>
         </div>
         <div class="menu-item">
-          <a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo38/layout-builder.html">
+          <a class="menu-link  @if($title == 'Survey') active @endif" href="{{ route('admin.survey') }}">
             <span class="menu-icon">
               <i class="ki-outline ki-questionnaire-tablet fs-2"></i>
             </span>
             <span class="menu-title">Survey</span>
           </a>
         </div>
-        <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+        <div data-kt-menu-trigger="click" class="menu-item @if($title == 'News') here show @endif menu-accordion">
           <span class="menu-link">
             <span class="menu-icon">
               <i class="ki-outline ki-message-text fs-2"></i>
@@ -49,7 +49,7 @@
           </span>
           <div class="menu-sub menu-sub-accordion">
             <div class="menu-item">
-              <a class="menu-link active" href="index.html">
+              <a class="menu-link  @if($subTitle == 'Category') active @endif" href="{{ route('admin.category') }}">
                 <span class="menu-bullet">
                   <span class="bullet bullet-dot"></span>
                 </span>
@@ -57,7 +57,7 @@
               </a>
             </div>
             <div class="menu-item">
-              <a class="menu-link" href="dashboards/ecommerce.html">
+              <a class="menu-link @if($subTitle == 'List') active @endif" href="{{ route('admin.news') }}">
                 <span class="menu-bullet">
                   <span class="bullet bullet-dot"></span>
                 </span>
@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="menu-item">
-          <a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo38/layout-builder.html">
+          <a class="menu-link @if($title == 'Report') active @endif menu-accordion"" href="{{ route('admin.report') }}">
             <span class="menu-icon">
               <i class="ki-outline ki-tablet-book fs-2"></i>
             </span>
@@ -75,7 +75,7 @@
           </a>
         </div>
         <div class="menu-item">
-          <a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo38/layout-builder.html">
+          <a class="menu-link @if($title == 'Message') active @endif menu-accordion"" href="{{ route('admin.message') }}">
             <span class="menu-icon">
               <i class="ki-outline ki-sms fs-2"></i>
             </span>
@@ -83,7 +83,7 @@
           </a>
         </div>
         <div class="menu-item">
-          <a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo38/layout-builder.html">
+          <a class="menu-link @if($title == 'User') active @endif menu-accordion"" href="{{ route('admin.user') }}">
             <span class="menu-icon">
               <i class="ki-outline ki-profile-user fs-2"></i>
             </span>

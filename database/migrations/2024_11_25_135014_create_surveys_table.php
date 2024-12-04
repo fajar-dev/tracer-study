@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('thumbnail_path')->nullable();
             $table->text('description');
-            $table->json('question');
+            $table->json('question')->nullable();
             $table->boolean('is_active');
             $table->boolean('is_private');
             $table->timestamps();

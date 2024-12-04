@@ -26,13 +26,22 @@ class Report extends Model
     protected static function boot()
     {
         parent::boot();
-
+    
         static::saving(function ($model) {
             if ($model->isDirty('title')) {
-                $model->slug = Str::slug($model->title);
+                $slug = Str::slug($model->title);
+                $count = 1;
+    
+                while (Report::where('slug', $slug)->exists()) {
+                    $slug = Str::slug($model->title) . '-' . $count;
+                    $count++;
+                }
+    
+                $model->slug = $slug;
             }
         });
     }
+    
     
     public function user(): BelongsTo
     {

@@ -5,11 +5,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 
-Route::get('/', [DashboardController::class, 'index'])->name('home');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::prefix('/auth')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -44,6 +45,18 @@ Route::prefix('/report')->group(function () {
     Route::get('/{id}/edit', [ReportController::class, 'reportEdit'])->name('admin.report.edit');
     Route::post('/{id}/edit', [ReportController::class, 'reportUpdate'])->name('admin.report.update');
     Route::get('/{id}/destroy', [ReportController::class, 'reportDestroy'])->name('admin.report.destroy');
+});
+
+Route::prefix('/survey')->group(function () {
+    Route::get('/', [SurveyController::class, 'survey'])->name('admin.survey');
+    Route::get('/add', [SurveyController::class, 'surveyAdd'])->name('admin.survey.add');
+    Route::post('/add', [SurveyController::class, 'surveyStore'])->name('admin.survey.store');
+    Route::get('/{id}/edit', [SurveyController::class, 'surveyEdit'])->name('admin.survey.edit');
+    Route::post('/{id}/edit', [SurveyController::class, 'surveyUpdate'])->name('admin.survey.update');
+    Route::get('/{id}/destroy', [SurveyController::class, 'surveyDestroy'])->name('admin.survey.destroy');
+    Route::get('/{id}/create-form', [SurveyController::class, 'surveyCreateForm'])->name('admin.survey.create-form');
+    Route::post('/{id}/create-form/submit', [SurveyController::class, 'surveyCreateFormSubmit'])->name('admin.survey.create-form.submit');
+
 });
 
 Route::prefix('/message')->group(function () {

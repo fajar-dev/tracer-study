@@ -19,6 +19,10 @@ class SurveyResponse extends Model
         'answer'
     ];
 
+    protected $casts = [
+        'answer' => 'array',
+    ];
+
     public function survey(): BelongsTo
     {
         return $this->belongsTo(Survey::class);

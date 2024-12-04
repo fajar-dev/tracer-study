@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use App\Models\SurveyResponse;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -25,6 +26,29 @@ class Survey extends Model
         'is_active',
         'is_private'
     ];
+
+    protected $casts = [
+        'question' => 'array',
+    ];
+    
+    protected static function boot()
+{
+    parent::boot();
+
+    static::saving(function ($model) {
+        if ($model->isDirty('title')) {
+            $slug = Str::slug($model->title);
+            $count = 1;
+
+            while (Survey::where('slug', $slug)->exists()) {
+                $slug = Str::slug($model->title) . '-' . $count;
+                $count++;
+            }
+
+            $model->slug = $slug;
+        }
+    });
+}
     
     public function user(): BelongsTo
     {
