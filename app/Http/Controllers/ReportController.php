@@ -9,6 +9,19 @@ use Illuminate\Support\Facades\Validator;
 
 class ReportController extends Controller
 {
+    public function index(Request $request){
+        $search = $request->input('q');
+        $data = Report::where('title', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(10);
+        $data->appends(['q' => $search]);
+        $data = [
+            'title' => 'Report',
+            'subTitle' => null,
+            'page_id' => null,
+            'report' => $data
+        ];
+        return view('main.report.index',  $data);
+    }
+
     public function report(Request $request){
         $search = $request->input('q');
         $data = Report::where('title', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(10);

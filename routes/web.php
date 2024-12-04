@@ -12,7 +12,20 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MainController;
 
 Route::get('/', [MainController::class, 'index'])->name('home');
+Route::prefix('/news')->group(function () {
+    Route::get('/', [NewsController::class, 'index'])->name('news');
+    Route::get('/{slug}', [NewsController::class, 'show'])->name('news.show');
+});
 
+Route::prefix('/report')->group(function () {
+    Route::get('/', [ReportController::class, 'index'])->name('report');
+    Route::get('/{slug}', [ReportController::class, 'show'])->name('report.show');
+});
+
+Route::prefix('/survey')->group(function () {
+    Route::get('/', [SurveyController::class, 'index'])->name('survey');
+    Route::get('/{slug}', [SurveyController::class, 'show'])->name('report.show');
+});
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -81,4 +94,4 @@ Route::prefix('/app')->group(function () {
         Route::post('/signin-method', [ProfileController::class, 'signinUpdate'])->name('admin.profile.signin');
         Route::post('/change-password', [ProfileController::class, 'changePassword'])->name('admin.profile.change-password');
     });
-});
+})->middleware('auth');

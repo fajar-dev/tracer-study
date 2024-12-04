@@ -9,6 +9,18 @@ use Illuminate\Support\Facades\Validator;
 
 class SurveyController extends Controller
 {
+    public function index(Request $request){
+        $search = $request->input('q');
+        $data = Survey::where('title', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(10);
+        $data->appends(['q' => $search]);
+        $data = [
+            'title' => 'Survey',
+            'subTitle' => null,
+            'survey' => $data
+        ];
+        return view('main.survey.index',  $data);
+    }
+
     public function survey(Request $request){
         $search = $request->input('q');
         $data = Survey::where('title', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(10);

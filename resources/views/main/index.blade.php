@@ -21,7 +21,7 @@
                     </div>
                   </div>
                   <div class="ps-lg-20">
-                    <img src="{{ asset('main/media/svg/illustrations/easy/9.svg') }}" class="w-lg-400px w-md-300px" alt="" />
+                    <img src="{{ asset('app/media/svg/illustrations/easy/9.svg') }}" class="w-lg-400px w-md-300px" alt="" />
                   </div>
                 </div>
               </div>
@@ -33,7 +33,7 @@
             <div class="mb-17">
               <div class="d-flex flex-stack mb-5">
                 <h1 class="text-gray-900 fs-2qx">Survey & Questionnaire</h1>
-                <a href="#" class="fs-6 fw-semibold link-primary">See More</a>
+                <a href="{{ route('survey') }}" class="fs-6 fw-semibold link-primary">See More</a>
               </div>
               <div class="separator separator-dashed mb-9"></div>
               <div class="row">
@@ -63,7 +63,7 @@
             <div class="mb-17">
               <div class="d-flex flex-stack mb-5">
                 <h1 class="text-gray-900 fs-2qx">News & Article</h1>
-                <a href="#" class="fs-6 fw-semibold link-primary">See More</a>
+                <a href="{{ route('news') }}" class="fs-6 fw-semibold link-primary">See More</a>
               </div>
               <div class="separator separator-dashed mb-9"></div>
               <div class="row">
@@ -134,7 +134,7 @@
             <div class="mb-17">
               <div class="d-flex flex-stack mb-5">
                 <h1 class="text-gray-900 fs-2qx">Report</h1>
-                <a href="#" class="fs-6 fw-semibold link-primary">See More</a>
+                <a href="{{ route('report') }}" class="fs-6 fw-semibold link-primary">See More</a>
               </div>
               <div class="separator separator-dashed mb-9"></div>
               <div class="row">
@@ -142,7 +142,7 @@
                 <div class="col-md-6 col-lg-3 pb-10 pb-lg-0">
                   <div class="card-xl-stretch me-md-6">
                     <div class="m-0">
-                      <a href="pages/user-profile/overview.html" class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
+                      <a href="pages/user-profile/overview.html" class="fs-3 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
                       <div class="fw-semibold fs-5 text-gray-600 text-gray-900 my-4">
                         {!! Str::limit(strip_tags($item->content), 100) !!}
                       </div>
@@ -153,7 +153,7 @@
                     </div>
                   </div>
                 </div>
-              @endforeach              
+                @endforeach              
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@
                     </div>
                     <div class="col-md-6 ps-lg-10">
                       <div id="kt_contact_map" class="w-100 rounded mb-2 mb-lg-0 mt-2" style="height: 486px">
-                        <iframe class="rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.3418825549724!2d97.06313349999999!3d5.2047969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30477796fd166881%3A0x3417d1e1525cbe2c!2sKesekretariatan%20UKM%20KSR%20PMI%20Unit%2004%20Universitas%20Malikussaleh!5e0!3m2!1sen!2sid!4v1631072963464!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" width="700" height="450"></iframe>
+                        <iframe class="rounded w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.3418825549724!2d97.06313349999999!3d5.2047969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30477796fd166881%3A0x3417d1e1525cbe2c!2sKesekretariatan%20UKM%20KSR%20PMI%20Unit%2004%20Universitas%20Malikussaleh!5e0!3m2!1sen!2sid!4v1631072963464!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                       </div>
                     </div>
                   </div>

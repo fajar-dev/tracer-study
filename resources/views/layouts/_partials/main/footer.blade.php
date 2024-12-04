@@ -1,4 +1,4 @@
-<div id="kt_app_footer" class="app-footer pt-lg-4 mt-20 mb-5">
+<div id="kt_app_footer" class="app-footer pt-20 mt-20 pb-5 bg-light">
   <div class="app-container container-fluid ">
     <div class="px-lg-20 mx-lg-20">
       <div class="row g-10 mb-15">
@@ -57,14 +57,15 @@
           </div>
           <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
             <li class="menu-item px-2">
-              <img src="assets/media/svg/brand-logos/facebook-4.svg" class="h-20px" alt="">
+              <img src="{{ asset('app/media/svg/brand-logos/facebook-4.svg') }}" class="h-20px" alt="">
             </li>
             <li class="menu-item px-2">
-              <img src="assets/media/svg/brand-logos/twitter.svg" class="h-20px" alt="">
+              <img src="{{ asset('app/media/svg/brand-logos/twitter.svg') }}" class="h-20px" alt="">
             </li>
             <li class="menu-item px-2">
-              <img src="assets/media/svg/brand-logos/instagram-2-1.svg" class="h-20px" alt="">
+              <img src="{{ asset('app/media/svg/brand-logos/instagram-2-1.svg') }}" class="h-20px" alt="">
             </li>
+          </ul>
         </div>
       </div>
     </div>

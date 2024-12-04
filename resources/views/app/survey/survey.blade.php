@@ -36,8 +36,8 @@
             <table class="table table-row-dashed fs-6 gy-5">
               <thead>
                 <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                  <th class="min-w-125px">Title</th>
-                  <th class="min-w-200px">Description</th>
+                  <th class="min-w-300px">Title</th>
+                  <th class="min-w-175px">Description</th>
                   <th class="min-w-50px">Respondent</th>
                   <th class="min-w-125px">Author</th>
                   <th class="min-w-125px">Created Date</th>

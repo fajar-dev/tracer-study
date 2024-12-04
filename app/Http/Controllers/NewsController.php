@@ -11,6 +11,20 @@ use Illuminate\Support\Facades\Validator;
 
 class NewsController extends Controller
 {
+    public function index(Request $request){
+        $search = $request->input('q');
+        $data = News::where('title', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(10);
+        $data->appends(['q' => $search]);
+        $data = [
+            'title' => 'News',
+            'subTitle' => 'List',
+            'page_id' => null,
+            'news' => $data,
+            'category' => NewsCategory::all()
+        ];
+        return view('main.news.index',  $data);
+    }
+
     public function news(Request $request){
         $search = $request->input('q');
         $data = News::where('title', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(10);
