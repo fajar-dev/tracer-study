@@ -17,12 +17,25 @@ class NewsController extends Controller
         $data->appends(['q' => $search]);
         $data = [
             'title' => 'News',
-            'subTitle' => 'List',
+            'subTitle' => null,
             'page_id' => null,
             'news' => $data,
             'category' => NewsCategory::all()
         ];
         return view('main.news.index',  $data);
+    }
+
+    public function show($slug){
+        $news = News::where('slug', $slug)->firstOrFail();
+        $data = [
+            'title' => 'News',
+            'subTitle' => 'List',
+            'page_id' => null,
+            'news' => $news,
+            'category' => NewsCategory::all(),
+            'recentPost' => News::orderBy('created_at', 'desc')->limit(5)->get()
+        ];
+        return view('main.news.show',  $data);
     }
 
     public function news(Request $request){

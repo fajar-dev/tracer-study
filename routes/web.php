@@ -24,7 +24,7 @@ Route::prefix('/report')->group(function () {
 
 Route::prefix('/survey')->group(function () {
     Route::get('/', [SurveyController::class, 'index'])->name('survey');
-    Route::get('/{slug}', [SurveyController::class, 'show'])->name('report.show');
+    Route::get('/{slug}', [SurveyController::class, 'show'])->name('survey.show');
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

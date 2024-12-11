@@ -16,7 +16,7 @@
                     <div class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5" style="background-image:url('{{ Storage::url($item->thumbnail_path) }}')">
                     </div>
                       <div class="m-0">
-                        <a href="pages/user-profile/overview.html" class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
+                        <a href="{{ route('news.show', $item->slug) }}" class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
                         <div class="fw-semibold fs-5 text-gray-600 text-gray-900 my-4">
                           {!! Str::limit(strip_tags($item->content), 100) !!}
                         </div>
@@ -43,13 +43,13 @@
               <div class="card-body">
                 <div class="flex-column flex-lg-row-auto w-100 w-xl-300px mb-10">
                   <div class="mb-16">
-                      <h4 class="text-gray-900 mb-7">Search Blog</h4>
+                      <h4 class="text-gray-900 mb-7">Search News</h4>
                       <div class="position-relative">
                           <i class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6"><span class="path1"></span><span class="path2"></span></i>
                           <input type="text" class="form-control form-control-solid ps-10" name="search" value="" placeholder="Search" fdprocessedid="1w95zi">
                       </div>
                   </div>
-                  <div class="mb-16">
+                  <div class="mb-0">
                       <h4 class="text-gray-900 mb-7">Categories</h4>
                       @foreach ($category as $item)
                         <div class="d-flex flex-stack fw-semibold fs-5 text-muted mb-4">

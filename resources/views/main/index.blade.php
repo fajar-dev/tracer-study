@@ -44,11 +44,11 @@
                     </div>
                     <div class="m-0">
                       <div class="fs-6 fw-bold">
-                        <a href="pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">{{ $item->user->name }}</a>
+                        <span class="text-gray-700">{{ $item->user->name }}</span>
                       </div>
-                      <a href="pages/user-profile/overview.html" class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
+                      <span class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</span>
                       <div class="mt-5">
-                        <a href="" class="btn btn-primary">Isi Kuisioner</a>
+                        <a href="{{ route('survey.show', $item->slug) }}" class="btn btn-primary">Isi Kuisioner</a>
                       </div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@
                               <div class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-350px mb-5" style="background-image:url('{{ Storage::url($item->thumbnail_path) }}')" data-fslightbox="lightbox-video-tutorials" href="https://www.youtube.com/embed/btornGtLwIo">
                               </div>
                                 <div class="m-0">
-                                  <a href="pages/user-profile/overview.html" class="fs-1 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
+                                  <a href="{{ route('news.show', $item->slug) }}" class="fs-1 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
                                   <div class="fw-semibold fs-5 text-gray-600 text-gray-900 my-4">
                                     {!! Str::limit(strip_tags($item->content), 300) !!}
                                   </div>
@@ -84,7 +84,7 @@
                                               <img alt="" src="{{  $item->user->photo_path ? Storage::url( $item->user->photo_path) : 'https://ui-avatars.com/api/?background=DFFFEA&color=04B440&bold=true&name='. $item->user->name }}">                                          
                                           </div>           
                                           <div class="fs-5 fw-bold">
-                                              <a href="/metronic8/demo47/pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">{{ $item->user->name }}</a>
+                                              <span class="text-gray-700">{{ $item->user->name }}</span>
                                               <span class="text-muted">on {{ \Carbon\Carbon::parse($item->created_at)->format('M d, Y') }}</span>                   
                                           </div>
                                       </div>
@@ -105,14 +105,14 @@
                                     <div class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5" style="background-image:url('{{ Storage::url($item->thumbnail_path) }}')" data-fslightbox="lightbox-video-tutorials" href="https://www.youtube.com/embed/btornGtLwIo">
                                     </div>
                                     <div class="m-0">
-                                        <a href="pages/user-profile/overview.html" class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
+                                        <a href="{{ route('news.show', $item->slug) }}" class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
                                         <div class="d-flex flex-stack flex-wrap">    
                                             <div class="d-flex align-items-center pe-2">
                                                 <div class="symbol symbol-35px symbol-circle me-3">
                                                     <img alt="" src="{{  $item->user->photo_path ? Storage::url( $item->user->photo_path) : 'https://ui-avatars.com/api/?background=DFFFEA&color=04B440&bold=true&name='. $item->user->name }}">                                          
                                                 </div>           
                                                 <div class="fs-5 fw-bold">
-                                                    <a href="/metronic8/demo47/pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">{{ $item->user->name }}</a>
+                                                    <span class="text-gray-700">{{ $item->user->name }}</span>
                                                     <span class="text-muted">on {{ \Carbon\Carbon::parse($item->created_at)->format('M d, Y') }}</span>                   
                                                 </div>
                                             </div>
@@ -142,12 +142,12 @@
                 <div class="col-md-6 col-lg-3 pb-10 pb-lg-0">
                   <div class="card-xl-stretch me-md-6">
                     <div class="m-0">
-                      <a href="pages/user-profile/overview.html" class="fs-3 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
+                      <a href="{{ route('report.show', $item->slug) }}" class="fs-3 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
                       <div class="fw-semibold fs-5 text-gray-600 text-gray-900 my-4">
                         {!! Str::limit(strip_tags($item->content), 100) !!}
                       </div>
                       <div class="fs-6 fw-bold">
-                        <a href="pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">{{ $item->user->name }}</a>
+                        <span class="text-gray-700">{{ $item->user->name }}</span>
                         <span class="text-muted">on {{ \Carbon\Carbon::parse($item->created_at)->format('M d, Y') }}</span>
                       </div>
                     </div>
