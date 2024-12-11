@@ -5,40 +5,42 @@
       <div class="px-lg-20 mx-lg-20 mt-10 mb-20">
         <div class="row g-5 g-xl-10">
           <div class="col-lg-9">
-            <div class="">
-              <div class="mb-8">
-                <a href="#" class="text-gray-900 text-hover-primary fs-2hx fw-bold">{{  $news->title }}</a>
-                <div class="d-flex align-items-center flex-wrap mt-6">
-                  <div class="me-9 my-1 d-flex align-items-center">
-                    <i class="ki-duotone ki-element-11 text-primary fs-2 me-1">
-                      <span class="path1"></span>
-                      <span class="path2"></span>
-                      <span class="path3"></span>
-                      <span class="path4"></span>
-                    </i>
-                    <span class="fw-bold text-gray-500">{{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}</span>
-                  </div>
-                  <div class="me-9 my-1 d-flex align-items-center">
-                    <i class="ki-duotone ki-briefcase text-primary fs-2 me-1">
-                      <span class="path1"></span>
-                      <span class="path2"></span>
-                    </i>
-                    <span class="fw-bold text-gray-500">{{  $news->newsCategory->name }}</span>
-                  </div>
-                  <div class="me-9 my-1">
-                    <div class="symbol symbol-30px symbol-circle">
-                      <img src="{{  $news->user->photo_path ? Storage::url( $news->user->photo_path) : 'https://ui-avatars.com/api/?background=DFFFEA&color=04B440&bold=true&name='. $news->user->name }}" class="" alt="" />
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-8">
+                  <a href="#" class="text-gray-900 text-hover-primary fs-2hx fw-bold">{{  $news->title }}</a>
+                  <div class="d-flex align-items-center flex-wrap mt-6">
+                    <div class="me-9 my-1 d-flex align-items-center">
+                      <i class="ki-duotone ki-element-11 text-primary fs-2 me-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                        <span class="path3"></span>
+                        <span class="path4"></span>
+                      </i>
+                      <span class="fw-bold text-gray-500">{{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}</span>
                     </div>
-                    <span class="fw-bold text-gray-500">{{  $news->user->name }}</span>
+                    <div class="me-9 my-1 d-flex align-items-center">
+                      <i class="ki-duotone ki-briefcase text-primary fs-2 me-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                      </i>
+                      <span class="fw-bold text-gray-500">{{  $news->newsCategory->name }}</span>
+                    </div>
+                    <div class="me-9 my-1">
+                      <div class="symbol symbol-30px symbol-circle">
+                        <img src="{{  $news->user->photo_path ? Storage::url( $news->user->photo_path) : 'https://ui-avatars.com/api/?background=DFFFEA&color=04B440&bold=true&name='. $news->user->name }}" class="" alt="" />
+                      </div>
+                      <span class="fw-bold text-gray-500">{{  $news->user->name }}</span>
+                    </div>
+                  </div>
+                  <div class="overlay mt-8">
+                    <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-450px" style="background-image:url('{{ Storage::url($news->thumbnail_path) }}')"></div>
+                    
                   </div>
                 </div>
-                <div class="overlay mt-8">
-                  <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-450px" style="background-image:url('{{ Storage::url($news->thumbnail_path) }}')"></div>
-                  
+                <div class="fs-5 fw-semibold text-gray-600">
+                  {!! $news->content !!}
                 </div>
-              </div>
-              <div class="fs-5 fw-semibold text-gray-600">
-                {!! $news->content !!}
               </div>
             </div>
           </div>

@@ -4,39 +4,41 @@
     <div id="kt_app_content_container" class="app-container container-fluid">
       <div class="px-lg-20 mx-lg-20 mt-10 mb-20">
         <div class="row g-5 g-xl-10 justify-content-center">
-          <div class="col-lg-9">
-            <div class="">
-              <div class="mb-8">
-                <a href="#" class="text-gray-900 text-hover-primary fs-2hx fw-bold">{{  $report->title }}</a>
-                <div class="d-flex align-items-center flex-wrap mt-6">
-                  <div class="me-9 my-1 d-flex align-items-center">
-                    <i class="ki-duotone ki-element-11 text-primary fs-2 me-1">
-                      <span class="path1"></span>
-                      <span class="path2"></span>
-                      <span class="path3"></span>
-                      <span class="path4"></span>
-                    </i>
-                    <span class="fw-bold text-gray-500">{{ \Carbon\Carbon::parse($report->created_at)->format('M d, Y') }}</span>
-                  </div>
-                  <div class="me-9 my-1">
-                    <div class="symbol symbol-30px symbol-circle">
-                      <img src="{{  $report->user->photo_path ? Storage::url( $report->user->photo_path) : 'https://ui-avatars.com/api/?background=DFFFEA&color=04B440&bold=true&name='. $report->user->name }}" class="" alt="" />
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-8">
+                  <a href="#" class="text-gray-900 text-hover-primary fs-2hx fw-bold">{{  $report->title }}</a>
+                  <div class="d-flex align-items-center flex-wrap mt-6">
+                    <div class="me-9 my-1 d-flex align-items-center">
+                      <i class="ki-duotone ki-element-11 text-primary fs-2 me-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                        <span class="path3"></span>
+                        <span class="path4"></span>
+                      </i>
+                      <span class="fw-bold text-gray-500">{{ \Carbon\Carbon::parse($report->created_at)->format('M d, Y') }}</span>
                     </div>
-                    <span class="fw-bold text-gray-500">{{  $report->user->name }}</span>
+                    <div class="me-9 my-1">
+                      <div class="symbol symbol-30px symbol-circle">
+                        <img src="{{  $report->user->photo_path ? Storage::url( $report->user->photo_path) : 'https://ui-avatars.com/api/?background=DFFFEA&color=04B440&bold=true&name='. $report->user->name }}" class="" alt="" />
+                      </div>
+                      <span class="fw-bold text-gray-500">{{  $report->user->name }}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <a href="{{ Storage::url($report->file_path) }}" target="_blank">
-                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 mb-3 d-flex align-items-center ">
-                  <i class="ki-duotone ki-file-down fs-2hx pe-5 text-primary">
-                  <span class="path1"></span>
-                  <span class="path2"></span>
-                  </i>
-                  <span class="fs-6 fw-bold text-primary">Download File</span>
+                <a href="{{ Storage::url($report->file_path) }}" target="_blank">
+                  <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 mb-3 d-flex align-items-center ">
+                    <i class="ki-duotone ki-file-down fs-2hx pe-5 text-primary">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                    </i>
+                    <span class="fs-6 fw-bold text-primary">Download File</span>
+                  </div>
+                </a>
+                <div class="fs-5 fw-semibold text-gray-600 mt-5">
+                  {!! $report->content !!}
                 </div>
-              </a>
-              <div class="fs-5 fw-semibold text-gray-600 mt-5">
-                {!! $report->content !!}
               </div>
             </div>
           </div>

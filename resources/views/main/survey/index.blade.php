@@ -21,11 +21,11 @@
                     </div>
                     <div class="m-0">
                       <div class="fs-6 fw-bold">
-                        <a href="pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">{{ $item->user->name }}</a>
+                        <span class="text-gray-700 text-hover-primary">{{ $item->user->name }}</span>
                       </div>
-                      <a href="pages/user-profile/overview.html" class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
+                      <a href="{{ route('survey.show', $item->slug) }}" class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
                       <div class="mt-5">
-                        <a href="" class="btn btn-primary">Isi Kuisioner</a>
+                        <a href="{{ route('survey.show', $item->slug) }}" class="btn btn-primary">Isi Kuisioner</a>
                       </div>
                     </div>
                   </div>
