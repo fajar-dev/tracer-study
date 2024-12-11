@@ -22,6 +22,18 @@ class ReportController extends Controller
         return view('main.report.index',  $data);
     }
 
+    public function show($slug){
+        $report = Report::where('slug', $slug)->firstOrFail();
+        $data = [
+            'title' => 'Report',
+            'subTitle' => null,
+            'page_id' => null,
+            'report' => $report,
+            'otherReport' => Report::orderBy('created_at', 'desc')->limit(4)->get()
+        ];
+        return view('main.report.show',  $data);
+    }
+
     public function report(Request $request){
         $search = $request->input('q');
         $data = Report::where('title', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(10);

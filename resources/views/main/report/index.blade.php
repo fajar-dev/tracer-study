@@ -18,12 +18,12 @@
               <div class="col-md-3 col-lg-3 pb-10 pb-lg-0">
                 <div class="card-xl-stretch me-md-6">
                   <div class="m-0">
-                    <a href="pages/user-profile/overview.html" class="fs-3 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
+                    <a href="{{ route('report.show', $item->slug) }}" class="fs-3 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">{{ $item->title }}</a>
                     <div class="fw-semibold fs-5 text-gray-600 text-gray-900 my-4">
                       {!! Str::limit(strip_tags($item->content), 100) !!}
                     </div>
                     <div class="fs-6 fw-bold">
-                      <a href="pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">{{ $item->user->name }}</a>
+                      <span class="text-gray-700 text-hover-primary">{{ $item->user->name }}</span>
                       <span class="text-muted">on {{ \Carbon\Carbon::parse($item->created_at)->format('M d, Y') }}</span>
                     </div>
                   </div>
