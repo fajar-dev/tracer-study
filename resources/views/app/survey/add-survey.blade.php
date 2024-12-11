@@ -69,7 +69,7 @@
           <div class="d-flex justify-content-end">
             <a href="{{ route('admin.survey') }}" class="btn btn-light-primary me-3">Cancel</a>
             <button type="submit" id="submit" class="btn btn-primary">
-              <span class="indicator-label">Submit</span>
+              <span class="indicator-label">Next</span>
               <span class="indicator-progress" style="display: none;">Loading... 
               <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
             </button>

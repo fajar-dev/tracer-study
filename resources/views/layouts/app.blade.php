@@ -9,6 +9,7 @@
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 		<link rel="shortcut icon" href="{{ asset('assets/img/logo-sekolah.png') }}" />
     @include('layouts._partials.app.head')
+		@yield('style')
 	</head>
 
 	

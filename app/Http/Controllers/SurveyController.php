@@ -86,7 +86,7 @@ class SurveyController extends Controller
     public function surveyCreateForm($id){
         $data = [
             'title' => 'Survey',
-            'subTitle' => 'Add Survey',
+            'subTitle' => 'Create form',
             'survey' => Survey::findOrFail($id)
         ];
         return view('app.survey.create-form-survey',  $data);
@@ -95,24 +95,15 @@ class SurveyController extends Controller
     public function surveyCreateFormSubmit(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'form_build' => 'required|json', // Validasi agar form_build adalah JSON
+            'form_build' => 'required|json',
         ]);
-    
         if ($validator->fails()) {
             return redirect()->back()->with('error', 'Validation Error')->withInput()->withErrors($validator);
         }
-    
-        // Temukan survey berdasarkan ID
         $survey = Survey::findOrFail($id);
-    
-        // Decode JSON string menjadi array sebelum disimpan
         $formBuild = json_decode($request->form_build, true);
-    
-        // Simpan JSON sebagai array ke kolom question (Eloquent akan menyimpan ke JSON secara otomatis jika tipe kolom mendukung JSON)
         $survey->question = $formBuild;
         $survey->save();
-    
-    
         return redirect()->route('admin.survey')->with('success', 'Survey has been created successfully');
     }
 }
