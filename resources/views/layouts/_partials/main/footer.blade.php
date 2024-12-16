@@ -5,10 +5,8 @@
         <div class="col-sm-5">
           <img src="{{ asset('icon/Unimal-BLU.png') }}" class="h-60px my-2" alt="">
           <div>
-            <div class="fs-3 fw-semibold text-gray-700 pt-10">Cot Tengku Nie Reuleut, <br>
-              Muara Batu, Aceh Utara,
-              Provinsi Aceh, Indonesia</div>
-            <div class="text-gray-500 fw-semibold pt-5 fs-5">Telp : +62.645.41373 <br> Fax : +62.645.44450 <br> +62 822 7780 0022</div>
+            <div class="fs-3 fw-semibold text-gray-700 pt-10">JL. Teungku Chie Ditiro, No. 26 Lantai 3, <br> Kampus Unimal Lancang Garam Kota Lhokseumawe 24351, <br>Aceh Indonesia</div>
+            <div class="text-gray-500 fw-semibold pt-5 fs-5">tracer@unimal.ac.id<br> upt.bkk@unimal.ac.id</div>
           </div>
         </div>
         <div class="col-sm-2">
@@ -53,7 +51,7 @@
         <div class="col-12 d-md-flex justify-content-between">
           <div class="text-gray-900 order-2 order-md-1">
             <span class="text-muted fw-semibold me-1">2024&copy;</span>
-            <a href="#" target="_blank" class="text-gray-800 text-hover-primary">UPT BKK Universitas Malikussaleh</a>
+            <a href="https://upt.bkk.unimal.ac.id" target="_blank" class="text-gray-800 text-hover-primary">UPT BKK Universitas Malikussaleh</a>
           </div>
           <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
             <li class="menu-item px-2">
