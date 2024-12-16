@@ -1,4 +1,45 @@
 @extends('layouts.main')
+
+@section('seo')
+  <meta
+  name="keywords"
+  content="tracer, study, university, malikussaleh, unimal, universitas, bkk, upt, alumni, mahasiswa, dosen, survey, kuisioner"
+  />
+  <meta name="author" content="Universitas Malikussaleh" />
+  <meta name="description" content="Selamat Datang Di Website Tracer Study Universitas Malikussaleh" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:url" content="{{ route('home') }}" />
+  <meta property="og:title" content="Tracer Study | {{ $title }} @if($subTitle) - {{ $subTitle }} @endif" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="{{ asset('icon/selamat-datang.png') }}" />
+  <meta
+    property="og:description"
+    content="Selamat Datang Di Website Tracer Study Universitas Malikussaleh"
+  />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tracer Study | {{ $title }} @if($subTitle) - {{ $subTitle }} @endif" />
+  <meta
+    name="twitter:description"
+    content="Selamat Datang Di Website Tracer Study Universitas Malikussaleh"
+  />
+  <meta name="twitter:image" content="{{ asset('icon/selamat-datang.png') }}" />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="distribution" content="global" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating" content="general" />
+  <meta name="language" content="Indonesian" />
+  <meta name="geo.region" content="ID" />
+  <meta name="geo.placename" content="Lhokseumawe" />
+
+  <!-- Canonical Tag -->
+  <link rel="canonical" href="{{ route('home') }}" />
+@endsection
+
 @section('content')
   <div id="kt_app_content" class="app-content flex-column-fluid">
     <div id="kt_app_content_container" class="app-container container-fluid">

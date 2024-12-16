@@ -40,7 +40,7 @@ class NewsController extends Controller
         $news = News::where('slug', $slug)->firstOrFail();
         $data = [
             'title' => 'News',
-            'subTitle' => 'List',
+            'subTitle' =>  $news->title,
             'page_id' => null,
             'news' => $news,
             'category' => NewsCategory::all(),

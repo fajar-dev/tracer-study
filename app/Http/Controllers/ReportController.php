@@ -26,7 +26,7 @@ class ReportController extends Controller
         $report = Report::where('slug', $slug)->firstOrFail();
         $data = [
             'title' => 'Report',
-            'subTitle' => null,
+            'subTitle' => $report->title,
             'page_id' => null,
             'report' => $report,
             'otherReport' => Report::orderBy('created_at', 'desc')->limit(4)->get()

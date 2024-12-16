@@ -1,4 +1,43 @@
 @extends('layouts.main')
+@section('seo')
+  <meta
+  name="keywords"
+  content="tracer, study, university, malikussaleh, unimal, universitas, bkk, upt, alumni, mahasiswa, dosen, survey, kuisioner"
+  />
+  <meta name="author" content="{{ $news->user->name }}" />
+  <meta name="description" content="{!! Str::limit(strip_tags($news->content), 100) !!}" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:url" content="{{ route('news.show', $news->slug) }}" />
+  <meta property="og:title" content="Tracer Study | {{ $title }} @if($subTitle) - {{ $subTitle }} @endif" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="{{ Storage::url($news->thumbnail_path) }}" />
+  <meta
+    property="og:description"
+    content="{!! Str::limit(strip_tags($news->content), 100) !!}"
+  />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tracer Study | {{ $title }} @if($subTitle) - {{ $subTitle }} @endif" />
+  <meta
+    name="twitter:description"
+    content="{!! Str::limit(strip_tags($news->content), 100) !!}"
+  />
+  <meta name="twitter:image" content="{{ Storage::url($news->thumbnail_path) }}" />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="distribution" content="global" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating" content="general" />
+  <meta name="language" content="Indonesian" />
+  <meta name="geo.region" content="ID" />
+  <meta name="geo.placename" content="Lhokseumawe" />
+
+  <!-- Canonical Tag -->
+  <link rel="canonical" href="{{ route('news.show', $news->slug) }}" />
+@endsection
 @section('content')
   <div id="kt_app_content" class="app-content flex-column-fluid">
     <div id="kt_app_content_container" class="app-container container-fluid">

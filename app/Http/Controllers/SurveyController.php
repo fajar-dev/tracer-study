@@ -28,7 +28,7 @@ class SurveyController extends Controller
         $questions = is_string($survey->question) ? json_decode($survey->question, true) : $survey->question;
         $data = [
             'title' => 'Survey',
-            'subTitle' => null,
+            'subTitle' => $survey->title,
             'survey' => $survey,
             'questions' => $questions,
         ];
