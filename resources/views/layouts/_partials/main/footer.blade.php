@@ -3,7 +3,7 @@
     <div class="px-lg-20 mx-lg-20">
       <div class="row g-10 mb-15">
         <div class="col-sm-5">
-          <img src="https://unimal.ac.id/images/Logo-Unimal-BLU.png" class="h-60px my-2" alt="">
+          <img src="{{ asset('icon/Unimal-BLU.png') }}" class="h-60px my-2" alt="">
           <div>
             <div class="fs-3 fw-semibold text-gray-700 pt-10">Cot Tengku Nie Reuleut, <br>
               Muara Batu, Aceh Utara,

@@ -4,8 +4,8 @@
       <div class="btn btn-icon btn-active-color-primary w-35px h-35px me-2" id="kt_app_sidebar_mobile_toggle">
         <i class="ki-outline ki-abstract-14 fs-2"></i>
       </div>
-      <a href="index.html">
-        <img alt="Logo" src="assets/media/logos/demo38-small.svg" class="h-30px" />
+      <a href="{{ route('dashboard') }}">
+        <img alt="Logo" src="{{ asset('icon/tracer.png') }}" class="h-30px" />
       </a>
     </div>
     <div class="app-navbar flex-lg-grow-1" id="kt_app_header_navbar">
@@ -21,7 +21,7 @@
                 <span class="bullet bg-gray-300 w-5px h-2px"></span>
               </li>
               <li class="breadcrumb-item text-muted">
-                <a href="index.html" class="text-muted text-hover-primary">{{ $title }}</a>
+                <a href="#" class="text-muted text-hover-primary">{{ $title }}</a>
               </li>
               @if ($subTitle)
               <li class="breadcrumb-item">

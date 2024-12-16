@@ -11,8 +11,8 @@
         </i>
       </button>
       <!--end::Aside toggle-->
-      <a href="index.html">
-        <img alt="Logo" src="assets/media/logos/demo47-small.svg" class="h-25px d-lg-none" />
+      <a href="{{ route('home') }}">
+        <img alt="Logo" src="{{ asset('icon/tracer.png') }}" class="h-25px d-lg-none" />
       </a>
     </div>
     <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1 px-lg-20 mx-lg-20" id="kt_app_header_wrapper">
@@ -45,9 +45,9 @@
         </div>
       </div>
       <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
-        <a href="index.html">
-          <img alt="Logo" src="https://tracer.unimal.ac.id/assets/images.php?filename=YVcxaFoyVnpMMHh2WjI4dFZISmhZMlZ5TFZOMGRXUjVMVEl1Y0c1bg==&width=Mzcw" class="h-40px d-none d-lg-inline app-header-logo-default theme-light-show" />
-          <img alt="Logo" src="https://tracer.unimal.ac.id/assets/images.php?filename=YVcxaFoyVnpMMHh2WjI4dFZISmhZMlZ5TFZOMGRXUjVMVEl1Y0c1bg==&width=Mzcw" class="h-40px d-none d-lg-inline app-header-logo-default theme-dark-show" />
+        <a href="{{ route('home') }}">
+          <img alt="Logo" src="{{ asset('icon/tracer.png') }}" class="h-40px d-none d-lg-inline app-header-logo-default theme-light-show" />
+          <img alt="Logo" src="{{ asset('icon/tracer.png') }}" class="h-40px d-none d-lg-inline app-header-logo-default theme-dark-show" />
         </a>
       </div>
       <div class="app-navbar flex-shrink-0">
@@ -167,6 +167,9 @@
               <div class="separator my-2"></div>
               <div class="menu-item px-5">
                 <a href="{{ route('dashboard') }}" class="menu-link px-5">Dashboard</a>
+              </div>
+              <div class="menu-item px-5">
+                <a href="{{ route('admin.profile') }}" class="menu-link px-5">My Profile</a>
               </div>
               <div class="menu-item px-5">
                 <a href="{{ route('logout') }}" class="menu-link px-5">Sign Out</a>
