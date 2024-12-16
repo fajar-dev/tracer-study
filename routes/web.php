@@ -25,6 +25,7 @@ Route::prefix('/report')->group(function () {
 Route::prefix('/survey')->group(function () {
     Route::get('/', [SurveyController::class, 'index'])->name('survey');
     Route::get('/{slug}', [SurveyController::class, 'show'])->name('survey.show');
+    Route::post('/{id}/sumbit', [SurveyController::class, 'submit'])->name('survey.submit');
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -77,6 +78,7 @@ Route::prefix('/app')->group(function () {
     });
     
     Route::prefix('/message')->group(function () {
+        Route::post('/', [MessageController::class, 'store'])->name('message.store');
         Route::get('/', [MessageController::class, 'message'])->name('admin.message');
         Route::get('/{id}/destroy', [MessageController::class, 'messageDestroy'])->name('admin.message.destroy');
     });

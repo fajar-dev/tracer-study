@@ -56,14 +56,14 @@
                       </div>
                   </div>
                   <div class="mb-16">
-                      <h4 class="text-gray-900 mb-7">Categories</h4>
-                      @foreach ($category as $item)
+                    <h4 class="text-gray-900 mb-7">Categories</h4>
+                    @foreach ($category as $item)
                         <div class="d-flex flex-stack fw-semibold fs-5 text-muted mb-4">
-                            <a href="#" class="text-muted text-hover-primary pe-2">
-                                {{$item->name }}        
+                            <a href="{{ url('news?category=' . $item->id) }}" class="text-muted text-hover-primary pe-2">
+                                {{ $item->name }}        
                             </a>
                         </div>
-                      @endforeach
+                    @endforeach
                   </div> 
                   <div class="m-0">
                     <h4 class="text-gray-900 mb-7">Recent Posts</h4>

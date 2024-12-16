@@ -56,7 +56,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="col-form-label required fw-bold fs-6">Content</label>
+            <label for="exampleFormControlInput1" class="col-form-label required fw-bold fs-6">Description</label>
             <textarea name="description" id="kt_docs_ckeditor_classic" required>
               {{ old('description') }}
             </textarea>

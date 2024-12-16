@@ -171,19 +171,35 @@
                 <div class="card-body p-lg-17">
                   <div class="row">
                     <div class="col-md-6 pe-lg-10">
-                      <form action="" class="form mb-15" method="post" id="kt_contact_form">
+                      <form action="{{ route('message.store') }}" class="form mb-15" method="post" id="kt_contact_form">
+                        @csrf
                         <h1 class="fw-bold text-gray-900 mb-9">Send Us Email</h1>
                         <div class="d-flex flex-column mb-5 fv-row">
-                          <label class="fs-5 fw-semibold mb-2">Subject</label>
-                          <input type="text" class="form-control form-control-solid" placeholder="" name="email" />
+                          <label class="fs-5 fw-semibold mb-2">Name</label>
+                          <input type="text" class="form-control form-control-solid" placeholder="" name="name" value="{{ old('name') }}" />
+                          @error('name')
+                            <div class="invalid-feedback">
+                              {{ $message }}
+                            </div>
+                          @enderror
                         </div>
                         <div class="d-flex flex-column mb-5 fv-row">
-                          <label class="fs-5 fw-semibold mb-2">Subject</label>
-                          <input class="form-control form-control-solid" placeholder="" name="subject" />
+                          <label class="fs-5 fw-semibold mb-2">Email</label>
+                          <input class="form-control form-control-solid" placeholder="" type="email" name="email" value="{{ old('email') }}" />
+                          @error('email')
+                            <div class="invalid-feedback">
+                              {{ $message }}
+                            </div>
+                          @enderror
                         </div>
                         <div class="d-flex flex-column mb-10 fv-row">
                           <label class="fs-6 fw-semibold mb-2">Message</label>
-                          <textarea class="form-control form-control-solid" rows="6" name="message" placeholder=""></textarea>
+                          <textarea class="form-control form-control-solid" rows="6" name="message" placeholder="">{{ old('message') }}</textarea>
+                          @error('message')
+                            <div class="invalid-feedback">
+                              {{ $message }}
+                            </div>
+                          @enderror
                         </div>
                         <button type="submit" class="btn btn-primary" id="kt_contact_submit_button">
                           <span class="indicator-label">Send Feedback</span>

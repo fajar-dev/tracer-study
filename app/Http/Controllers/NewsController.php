@@ -13,13 +13,24 @@ class NewsController extends Controller
 {
     public function index(Request $request){
         $search = $request->input('q');
-        $data = News::where('title', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(10);
-        $data->appends(['q' => $search]);
+        $category = $request->input('category');
+        $query = News::query();
+        if (!empty($search)) {
+            $query->where('title', 'LIKE', '%' . $search . '%');
+        }
+        if (!empty($category)) {
+            $query->where('news_category_id', $category);
+        }
+        $query = $query->orderBy('created_at', 'desc')->paginate(10);
+        $query->appends([
+            'q' => $search,
+            'category' => $category
+        ]);
         $data = [
             'title' => 'News',
             'subTitle' => null,
             'page_id' => null,
-            'news' => $data,
+            'news' => $query,
             'category' => NewsCategory::all()
         ];
         return view('main.news.index',  $data);
