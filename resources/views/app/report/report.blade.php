@@ -55,7 +55,7 @@
                       <td>
                         <div class="d-flex align-items-center">
                           <div class="ms-5">
-                            <a href="" target="_blank" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">{{ $item->title }}</a>
+                            <a href="{{{ route('report.show', $item->slug) }}}" target="_blank" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">{{ $item->title }}</a>
                             <div class="text-muted fs-7 fw-bold">{{ $item->slug }}</div>                    
                           </div>
                         </div>

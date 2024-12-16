@@ -55,11 +55,11 @@
                     <tr>
                       <td>
                         <div class="d-flex align-items-center">
-                          <a href="#" class="symbol symbol-50px">
+                          <div class="symbol symbol-50px">
                             <span class="symbol-label" style="background-image:url({{ Storage::url($item->thumbnail_path) }});"></span>
-                          </a>
+                          </div>
                           <div class="ms-5">
-                            <a href="" target="_blank" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">{{ $item->title }}</a>
+                            <a href="{{{ route('news.show', $item->slug) }}}" target="_blank" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">{{ $item->title }}</a>
                             <div class="text-muted fs-7 fw-bold">{{ $item->slug }}</div>                    
                           </div>
                         </div>

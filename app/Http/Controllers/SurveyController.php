@@ -122,4 +122,10 @@ class SurveyController extends Controller
         $survey->save();
         return redirect()->route('admin.survey')->with('success', 'Survey has been created successfully');
     }
+
+    public function surveyDestroy($id){
+        $survey = Survey::findOrFail($id);
+        $survey->delete();
+        return redirect()->route('admin.survey')->with('success', 'Survey has been deleted successfully');
+    }
 }
