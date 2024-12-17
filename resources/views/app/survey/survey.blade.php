@@ -78,7 +78,14 @@
                         </div>
                       </td>
                       <td>
-                        <div class="text-start">
+                        <div class="text-center">
+                          @if ($item->question)
+                            <a href="{{ route('admin.survey.respondent', $item->id) }}">
+                              {{ $item->surveyResponse->count() }}
+                            </a>
+                          @else
+                              -
+                          @endif
                         </div>
                       </td>
                       <td>
@@ -104,12 +111,19 @@
                           </span>
                         </a>
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
-                          <div class="menu-item px-3">
-                            <a href="{{ route('admin.survey.edit', $item->id) }}" class="menu-link px-3">Respondent</a>
-                          </div>
-                          <div class="menu-item px-3">
+                          @if ($item->question)
+                            <div class="menu-item px-3">
+                              <a href="{{ route('admin.survey.respondent', $item->id) }}" class="menu-link px-3">Respondent</a>
+                            </div>
+                          @else
+                            <div class="menu-item px-3">
+                              <a href="{{ route('admin.survey.create-form', $item->id) }}" class="menu-link px-3">Create Form</a>
+                            </div>
+                          @endif
+                         
+                          {{-- <div class="menu-item px-3">
                             <a href="{{ route('admin.survey.edit', $item->id) }}" class="menu-link px-3">Edit</a>
-                          </div>
+                          </div> --}}
                           <div class="menu-item px-3">
                             <a id="{{ route('admin.survey.destroy', $item->id) }}" class="menu-link px-3 btn-del">Delete</a>
                           </div>

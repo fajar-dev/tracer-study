@@ -128,4 +128,20 @@ class SurveyController extends Controller
         $survey->delete();
         return redirect()->route('admin.survey')->with('success', 'Survey has been deleted successfully');
     }
+
+    public function surveyRespondent($id){
+        $data = [
+            'title' => 'Survey',
+            'subTitle' => 'Respondent',
+            'survey' => Survey::findOrFail($id),
+            'respondent' => SurveyResponse::where('survey_id', $id)->paginate(10)
+        ];
+        return view('app.survey.respondent',  $data);
+    }
+
+    public function surveyRespondentDestroy($id){
+        $survey = SurveyResponse::findOrFail($id);
+        $survey->delete();
+        return redirect()->back()->with('success', 'Survey has been deleted successfully');
+    }
 }

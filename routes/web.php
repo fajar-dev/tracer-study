@@ -69,11 +69,11 @@ Route::prefix('/app')->group(function () {
         Route::get('/', [SurveyController::class, 'survey'])->name('admin.survey');
         Route::get('/add', [SurveyController::class, 'surveyAdd'])->name('admin.survey.add');
         Route::post('/add', [SurveyController::class, 'surveyStore'])->name('admin.survey.store');
-        Route::get('/{id}/edit', [SurveyController::class, 'surveyEdit'])->name('admin.survey.edit');
-        Route::post('/{id}/edit', [SurveyController::class, 'surveyUpdate'])->name('admin.survey.update');
         Route::get('/{id}/destroy', [SurveyController::class, 'surveyDestroy'])->name('admin.survey.destroy');
         Route::get('/{id}/create-form', [SurveyController::class, 'surveyCreateForm'])->name('admin.survey.create-form');
         Route::post('/{id}/create-form/submit', [SurveyController::class, 'surveyCreateFormSubmit'])->name('admin.survey.create-form.submit');
+        Route::get('/{id}/respondent', [SurveyController::class, 'surveyRespondent'])->name('admin.survey.respondent');
+        Route::get('/{id}/respondent/destroy', [SurveyController::class, 'surveyRespondentDestroy'])->name('admin.survey.respondent.destroy');
     
     });
     
