@@ -203,7 +203,7 @@
           <div class="my-2 me-5">
             <div class="fs-1 fs-lg-2qx fw-bold text-white mb-2">Mari sukseskan pelaksanaan Tracer Study <br> Universitas Malikussaleh</div>
           </div>
-          <a href="https://1.envato.market/EA4JP" class="btn btn-lg btn-outline border-2 btn-outline-white text-white flex-shrink-0 my-2">Isi Survey</a>
+          <a href="{{ route('survey') }}" class="btn btn-lg btn-outline border-2 btn-outline-white text-white flex-shrink-0 my-2">Isi Survey</a>
         </div>
         <div class="row mb-10">
           <div class="col-xl-12">
@@ -251,7 +251,7 @@
                     </div>
                     <div class="col-md-6 ps-lg-10">
                       <div id="kt_contact_map" class="w-100 rounded mb-2 mb-lg-0 mt-2" style="height: 486px">
-                        <iframe class="rounded w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.3418825549724!2d97.06313349999999!3d5.2047969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30477796fd166881%3A0x3417d1e1525cbe2c!2sKesekretariatan%20UKM%20KSR%20PMI%20Unit%2004%20Universitas%20Malikussaleh!5e0!3m2!1sen!2sid!4v1631072963464!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe class="rounded w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470.97490614644727!2d97.14745739462784!3d5.181807610174127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304783320edfc2af%3A0xc2aa2701354d56cc!2sCareer%20Development%20Center%20(CDC)%20Universitas%20Malikussaleh!5e0!3m2!1sid!2sid!4v1734506639893!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                       </div>
                     </div>
                   </div>

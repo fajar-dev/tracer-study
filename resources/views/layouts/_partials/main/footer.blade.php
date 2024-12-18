@@ -12,36 +12,36 @@
         <div class="col-sm-2">
           <h3 class="fw-bold text-gray-900 mb-7">Unit Layanan</h3>
           <div class="d-flex flex-column fw-semibold fs-4">
-            <a href="#" class="link-primary mb-4">BAKPK</a>
-            <a href="#" class="link-primary mb-4">BUK</a>
-            <a href="#" class="link-primary mb-4">UPT TIK</a>
-            <a href="#" class="link-primary mb-4">UPT Pustaka</a>
-            <a href="#" class="link-primary mb-4">UPT BKK</a>
-            <a href="#" class="link-primary mb-4">UPT BKP</a>
+            <a href="https://bakpk.unimal.ac.id/" class="link-primary mb-4">BAKPK</a>
+            <a href="https://buk.unimal.ac.id/" class="link-primary mb-4">BUK</a>
+            <a href="https://puskom.unimal.ac.id/" class="link-primary mb-4">UPT TIK</a>
+            <a href="https://pustaka.unimal.ac.id/" class="link-primary mb-4">UPT Pustaka</a>
+            <a href="https://upt.bkk.unimal.ac.id/" class="link-primary mb-4">UPT BKK</a>
+            <a href="https://uptbkp.unimal.ac.id/" class="link-primary mb-4">UPT BKP</a>
 
           </div>
         </div>
         <div class="col-sm-2">
           <h3 class="fw-bold text-gray-900 mb-7">Civitas Akademika</h3>
           <div class="d-flex flex-column fw-semibold fs-4">
-            <a href="#" class="link-primary mb-4">Portal Akademik</a>
-            <a href="#" class="link-primary mb-4">E-Learning</a>
-            <a href="#" class="link-primary mb-4">Sister</a>
-            <a href="#" class="link-primary mb-4">Simpeg</a>
-            <a href="#" class="link-primary mb-4">LPPM</a>
-            <a href="#" class="link-primary mb-4">LP3M</a>
+            <a href="http://portal.unimal.ac.id/" class="link-primary mb-4">Portal Akademik</a>
+            <a href="https://elearning.unimal.ac.id/" class="link-primary mb-4">E-Learning</a>
+            <a href="https://sister.unimal.ac.id/auth/login" class="link-primary mb-4">Sister</a>
+            <a href="https://simpeg.unimal.ac.id/" class="link-primary mb-4">Simpeg</a>
+            <a href="https://lppm.unimal.ac.id/" class="link-primary mb-4">LPPM</a>
+            <a href="https://lp3m.unimal.ac.id/" class="link-primary mb-4">LP3M</a>
             
           </div>
         </div>
         <div class="col-sm-2">
           <h3 class="fw-bold text-gray-900 mb-7">Link Literasi</h3>
           <div class="d-flex flex-column fw-semibold fs-4">
-            <a href="#" class="link-primary mb-4">Repositori</a>
-            <a href="#" class="link-primary mb-4">Perpustakaan</a>
-            <a href="#" class="link-primary mb-4">Open Journal</a>
-            <a href="#" class="link-primary mb-4">Conference</a>
-            <a href="#" class="link-primary mb-4">Proceedings</a>
-            <a href="#" class="link-primary mb-4">Repositori Mahasiswa</a>
+            <a href="https://repository.unimal.ac.id/" class="link-primary mb-4">Repositori</a>
+            <a href="https://pustaka.unimal.ac.id/opac/" class="link-primary mb-4">Perpustakaan</a>
+            <a href="https://ojs.unimal.ac.id/" class="link-primary mb-4">Open Journal</a>
+            <a href="https://ocs.unimal.ac.id/" class="link-primary mb-4">Conference</a>
+            <a href="https://proceedings.unimal.ac.id/" class="link-primary mb-4">Proceedings</a>
+            <a href="https://rama.unimal.ac.id/" class="link-primary mb-4">Repositori Mahasiswa</a>
 
           </div>
         </div>
